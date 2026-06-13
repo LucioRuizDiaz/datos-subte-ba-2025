@@ -1,0 +1,7 @@
+molinetes-2025/
+subte_2025_unificado.csv
+subte_2025_unificado.parquet
+estaciones-accesibles.csv
+.venv/
+venv/
+__pycache__/
