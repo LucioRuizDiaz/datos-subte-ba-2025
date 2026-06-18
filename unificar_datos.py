@@ -54,10 +54,10 @@ def unificar_datos():
                 ultimo_error = e
                 continue
         else:
-            print(f"❌ Error crítico al procesar {archivo}: {ultimo_error}")
+            print(f"Error crítico al procesar {archivo}: {ultimo_error}")
 
     if not lista_dataframes:
-        print("❌ No se pudo consolidar ninguna tabla. Revisar delimitadores.")
+        print("No se pudo consolidar ninguna tabla. Revisar delimitadores.")
         return
 
     # Combina todos los DataFrames mensuales en una única tabla unificada
@@ -78,10 +78,10 @@ def unificar_datos():
     df_final['NOMBRE_DIA'] = df_final['DIA_SEMANA'].map(dias_es)
 
     # Guardar resultados finales
-    print(f"\n💾 Guardando CSV unificado en: {ruta_salida_csv}")
+    print(f"\n Guardando CSV unificado en: {ruta_salida_csv}")
     df_final.to_csv(ruta_salida_csv, index=False, sep=';', encoding='utf-8')
     
-    print(f"💾 Guardando copia Parquet en: {ruta_salida_parquet}")
+    print(f" Guardando copia Parquet en: {ruta_salida_parquet}")
     df_final.to_parquet(ruta_salida_parquet, index=False)
     
     print(f"\n¡Éxito total! Filas unificadas finales: {len(df_final):,}")
